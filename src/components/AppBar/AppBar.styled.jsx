@@ -25,5 +25,5 @@ export const SideBar = styled.div`
     width: 300px;
     height: 100vh; 
     background-color: #22223b;
-    transition: right 0.3s ease;  
+    transition: 500ms ease-in-out;
 `;

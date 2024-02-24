@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Button, Container, SideBar } from "./AppBar.styled";
+import { PiMagicWand } from "react-icons/pi";
 
 const AppBar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -8,16 +10,16 @@ const AppBar = () => {
         setIsOpen(!isOpen);
     }
 
-    return (<header>
-        <p>AppBar</p>
-        <button type="button" onClick={handleClick}><RxHamburgerMenu /></button>
+    return (<Container>
+        <PiMagicWand size={28} color="white"/>
+        <Button type="button" onClick={handleClick}><RxHamburgerMenu size={28} color="white"/></Button>
 
 
-        {isOpen && (<div>
+        {isOpen && (<SideBar isOpen={isOpen}>
             <p>sidebar</p>
-            <button>Click</button>
-        </div>)}
-    </header>)
+            <button type="button" onClick={handleClick}>Click</button>
+        </SideBar>)}
+    </Container>)
 }
 
 export default AppBar;

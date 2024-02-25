@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Button, Container, SideBar } from "./AppBar.styled";
+import { Button, Container, RotatingImage, SideBar } from "./AppBar.styled";
 import { PiMagicWand } from "react-icons/pi";
 
 const AppBar = () => {
@@ -16,8 +16,10 @@ const AppBar = () => {
 
 
         {isOpen && (<SideBar isOpen={isOpen}>
-            <p>sidebar</p>
-            <button type="button" onClick={handleClick}>Click</button>
+            <RotatingImage />
+                <p>sidebar</p>
+                <button type="button" onClick={handleClick}>Click</button>
+        
         </SideBar>)}
     </Container>)
 }

@@ -1,4 +1,47 @@
 import styled from "@emotion/styled";
+import back from '../images/backcircle.png';
+import { keyframes } from '@emotion/react';
+
+const rotateAnimation = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const RotatingImage = styled.div`
+    width: 500px;
+    height: 500px; 
+    border-radius: 50%; 
+    background-image: url(${back});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: ${rotateAnimation} 20s linear infinite; 
+    opacity: 0.5;
+    z-index: -1;
+    position: absolute;
+`;
+
+
+export const SideBar = styled.div`
+    position: fixed;
+    top: 0;
+    right: ${({ isOpen }) => (isOpen ? '0' : '-300px')};
+    width: 300px;
+    height: 100vh; 
+    background-color: #001219; 
+    transition: 500ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+`;
+
 
 export const Container = styled.header`
     background-color: #4a4e69;
@@ -9,6 +52,7 @@ export const Container = styled.header`
     justify-content: space-between;
     padding-left:15px;
     padding-right:15px;
+    
 `;
 
 export const Button = styled.button`
@@ -16,14 +60,7 @@ export const Button = styled.button`
     outline: none;
     cursor: pointer;
     background-color: transparent;
-`;
-
-export const SideBar = styled.div`
-    position: fixed;
-    top: 0;
-    right: ${({ isOpen }) => (isOpen ? '0' : '-300px')};
-    width: 300px;
-    height: 100vh; 
-    background-color: #22223b;
-    transition: 500ms ease-in-out;
+    &hover{
+        color: grey;
+    }
 `;

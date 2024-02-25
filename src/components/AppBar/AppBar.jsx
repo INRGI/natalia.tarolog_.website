@@ -15,12 +15,12 @@ const AppBar = () => {
         <Button type="button" onClick={handleClick}><RxHamburgerMenu size={28} color="white"/></Button>
 
 
-        {isOpen && (<SideBar isOpen={isOpen}>
+        <SideBar isOpen={isOpen}>
             <RotatingImage />
                 <p>sidebar</p>
                 <button type="button" onClick={handleClick}>Click</button>
         
-        </SideBar>)}
+        </SideBar>
     </Container>)
 }
 

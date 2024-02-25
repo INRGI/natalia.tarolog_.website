@@ -33,14 +33,20 @@ export const SideBar = styled.div`
     width: 300px;
     height: 100vh; 
     background-color: #001219; 
-    transition: 500ms ease-in-out;
+    transition: right 500ms ease-in-out, background-color 500ms ease-in-out;
+    backdrop-filter: blur(30px) saturate(2);
+    -webkit-backdrop-filter: blur(30px) saturate(2);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-
+    &:after{
+        opacity: 0.3;
+        transition: opacity 0.5s;
+    }
 `;
+
 
 
 export const Container = styled.header`

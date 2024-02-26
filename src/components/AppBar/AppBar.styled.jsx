@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import back from '../images/backcircle.png';
 import { keyframes } from '@emotion/react';
+import { NavLink } from "react-router-dom";
 
 const rotateAnimation = keyframes`
   from {
@@ -69,4 +70,53 @@ export const Button = styled.button`
     &hover{
         color: grey;
     }
+`;
+
+export const ButtonClose = styled.button`
+    margin: 15px;
+    width: 32px;
+    height: 32px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+    background-color: transparent;
+    &hover{
+        color: grey;
+    }
+`;
+
+export const SideBarContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  
+  width: 100%;
+  height: 100%;
+`
+
+export const StyledLink = styled(NavLink)`
+    color: #edf2f4;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: bold;
+    transition: background-color ease-in-out 0.2s;
+    font-family: "Kode Mono", monospace;
+
+  &.active {
+    color: #c8b6ff;
+  }
+`;
+
+export const LinkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
 `;

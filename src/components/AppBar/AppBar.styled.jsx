@@ -30,8 +30,8 @@ export const RotatingImage = styled.div`
 export const SideBar = styled.div`
     position: fixed;
     top: 0;
-    right: ${({ isOpen }) => (isOpen ? '0' : '-300px')};
-    width: 300px;
+    right: ${({ isOpen }) => (isOpen ? '0' : '-80%')};
+    width: 80%;
     height: 100vh; 
     background-color: #001219; 
     transition: right 500ms ease-in-out, background-color 500ms ease-in-out;
@@ -42,16 +42,24 @@ export const SideBar = styled.div`
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    &:after{
-        opacity: 0.3;
-        transition: opacity 0.5s;
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Тут можете змінити прозорість чорного кольору, щоб затемнення відповідало вашим потребам */
+        z-index: -1; /* Щоб затемнення було під сайдбаром */
+        opacity: ${({ isOpen }) => (isOpen ? '1' : '0')}; /* Показуємо затемнення тільки коли сайдбар відкритий */
+        transition: opacity 500ms ease-in-out; /* Плавний перехід для затемнення */
     }
 `;
 
 
 
 export const Container = styled.header`
-    background-color: #4a4e69;
+    background-color: #0d1b2a;
     display: flex;
     height: 52px;
     align-items: center;
@@ -59,7 +67,18 @@ export const Container = styled.header`
     justify-content: space-between;
     padding-left:15px;
     padding-right:15px;
-    
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Тут можете змінити прозорість чорного кольору, щоб затемнення відповідало вашим потребам */
+        z-index: -1; /* Щоб затемнення було під сайдбаром */
+        opacity: ${({ isOpen }) => (isOpen ? '1' : '0')}; /* Показуємо затемнення тільки коли сайдбар відкритий */
+        transition: opacity 500ms ease-in-out; /* Плавний перехід для затемнення */
+    }
 `;
 
 export const Button = styled.button`
@@ -119,4 +138,12 @@ export const LinkContainer = styled.div`
   gap: 20px;
   width: 100%;
   height: 100%;
+`;
+
+export const LogoText = styled.p`
+  margin: 0;
+  padding: 0;
+  font-family: "Kode Mono", monospace;
+  font-size: 20px;
+  color: #edf2f4;
 `;

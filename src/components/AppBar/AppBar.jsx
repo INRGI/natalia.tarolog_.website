@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Button, ButtonClose, Container, LinkContainer, RotatingImage, SideBar, SideBarContainer, StyledLink } from "./AppBar.styled";
-import { PiMagicWand } from "react-icons/pi";
+import { Button, ButtonClose, Container, LinkContainer, LogoText, RotatingImage, SideBar, SideBarContainer, StyledLink } from "./AppBar.styled";
 import { IoMdClose } from "react-icons/io";
 
 const AppBar = () => {
@@ -11,8 +10,9 @@ const AppBar = () => {
         setIsOpen(!isOpen);
     }
 
-    return (<Container>
-        <PiMagicWand size={28} color="white"/>
+    return (<Container isOpen={isOpen}>
+        <LogoText >Natalia Tarolog</LogoText>
+        
         <Button type="button" onClick={handleClick}><RxHamburgerMenu size={28} color="white"/></Button>
 
 

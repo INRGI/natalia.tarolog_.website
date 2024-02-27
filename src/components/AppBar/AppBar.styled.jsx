@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import back from '../images/backcircle.png';
+import whitecircle from '../images/whitecircle.png';
 import { keyframes } from '@emotion/react';
 import { NavLink } from "react-router-dom";
 
@@ -103,9 +104,6 @@ export const ButtonClose = styled.button`
 
     cursor: pointer;
     background-color: transparent;
-    &hover{
-        color: grey;
-    }
 `;
 
 export const SideBarContainer = styled.div`
@@ -147,3 +145,22 @@ export const LogoText = styled.p`
   font-size: 20px;
   color: #edf2f4;
 `;
+
+export const Logo = styled.div`
+    width: 28px;
+    height: 28px; 
+    border-radius: 50%; 
+    background-image: url(${whitecircle});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: ${rotateAnimation} 20s linear infinite; 
+    
+`
+
+export const LogoContainer = styled.div`
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+`

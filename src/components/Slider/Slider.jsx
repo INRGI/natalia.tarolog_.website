@@ -1,41 +1,31 @@
-import { useState, useEffect } from 'react';
 import banner from '../../components/images/banner.jpeg'
-import { SliderContainer } from './Slider.styled';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
-const tarotCards = [
-  { id: 1, src: banner, alt: 'Tarot Card 1' },
-    { id: 2, src: banner, alt: 'Tarot Card 2' },
-    { id: 3, src: banner, alt: 'Tarot Card 3' },
-  { id: 4, src: banner, alt: 'Tarot Card 4' },
-  // Додайте більше карт за потребою
+const handleDragStart = (e) => e.preventDefault();
+
+const responsive = {
+    0: { items: 1 },
+    568: { items: 2 },
+    1024: {
+        items: 3,
+        itemsFit: 'contain'
+    },
+};
+
+const items = [
+  <img key={1} src={banner} onDragStart={handleDragStart} role="presentation" width={100} data-value="1"/>,
+  <img key={2} src={banner} onDragStart={handleDragStart} role="presentation" width={100} data-value="2"/>,
+    <img key={3} src={banner} onDragStart={handleDragStart} role="presentation" width={100} data-value="3"/>,
+  <img key={4} src={banner} onDragStart={handleDragStart} role="presentation" width={100} data-value="4"/>,
+    <img key={5} src={banner} onDragStart={handleDragStart} role="presentation" width={100} data-value="5"/>,
+  <img key={6} src={banner} onDragStart={handleDragStart} role="presentation" width={100} data-value="6"/>,
 ];
 
 const Slider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide(currentSlide === tarotCards.length - 1 ? 0 : currentSlide + 1);
-    }, 2000); // 3000 мілісекунд (3 секунди) до наступного слайда
-
-    return () => clearInterval(interval); // Очищення інтервалу при видаленні компонента
-  }, [currentSlide]);
-
   return (
-    <SliderContainer>
-=
-        {tarotCards.map((card, index) => (
-          <div
-            key={card.id}
-            className={index === currentSlide ? 'slide active' : 'slide'}
-            style={{ transform: `translateX(${index - currentSlide}00%)` }}
-          >
-            <img src={card.src} alt={card.alt} width={100}/>
-          </div>
-        ))}
-=
-    </SliderContainer>
+      <AliceCarousel responsive={responsive} infinite={true} mouseTracking items={items} autoPlay={true} disableButtonsControls={true} disableDotsControls={true} />
   );
-};
+}
 
 export default Slider;

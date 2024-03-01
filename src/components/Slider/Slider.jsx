@@ -1,7 +1,7 @@
 import banner from '../../components/images/banner.jpeg'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import { Image } from './Slider.styled';
+import { Image, SliderContainer } from './Slider.styled';
 
 const handleDragStart = (e) => e.preventDefault();
 
@@ -25,8 +25,10 @@ const items = [
 
 const Slider = () => {
   return (
+    <SliderContainer>
       <AliceCarousel animationDuration={1300} transition={1000} autoWidth={true} responsive={responsive} infinite={true} mouseTracking items={items} autoPlay={true} disableButtonsControls={true} disableDotsControls={true} />
-  );
+    </SliderContainer>
+    );
 }
 
 export default Slider;

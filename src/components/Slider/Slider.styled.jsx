@@ -6,6 +6,10 @@ export const SliderContainer = styled.div`
 `;
 
 export const Image = styled.img`
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    &:first-child {
+        padding-left: 0;
+    }
 `;

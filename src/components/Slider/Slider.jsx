@@ -25,7 +25,7 @@ const items = [
 
 const Slider = () => {
   return (
-      <AliceCarousel autoWidth={true} responsive={responsive} infinite={true} mouseTracking items={items} autoPlay={true} disableButtonsControls={true} disableDotsControls={true} />
+      <AliceCarousel animationDuration={1300} transition={1000} autoWidth={true} responsive={responsive} infinite={true} mouseTracking items={items} autoPlay={true} disableButtonsControls={true} disableDotsControls={true} />
   );
 }
 

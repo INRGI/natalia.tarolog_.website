@@ -30,6 +30,7 @@ export const RotatingImage = styled.div`
 
 export const SideBar = styled.div`
     position: fixed;
+    z-index: 999;
     top: 0;
     right: ${({ isOpen }) => (isOpen ? '0' : '-80%')};
     width: 80%;

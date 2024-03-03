@@ -25,9 +25,9 @@ const AppBar = () => {
             <SideBarContainer>
                 <ButtonClose type="button" onClick={handleClick}><IoMdClose color="white" size={32} /></ButtonClose>
                 <LinkContainer>
-                    <StyledLink to='/'>Home</StyledLink>
-                    <StyledLink to='/cards'>Cards</StyledLink>
-                    <StyledLink to='/history'>History</StyledLink>
+                    <StyledLink onClick={handleClick} to='/'>Home</StyledLink>
+                    <StyledLink onClick={handleClick} to='/cards'>Cards</StyledLink>
+                    <StyledLink onClick={handleClick} to='/history'>History</StyledLink>
                 </LinkContainer>
             </SideBarContainer> 
         

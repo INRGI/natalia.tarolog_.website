@@ -32,8 +32,8 @@ export const SideBar = styled.div`
     position: fixed;
     z-index: 999;
     top: 0;
-    right: ${({ isOpen }) => (isOpen ? '0' : '-80%')};
-    width: 80%;
+    right: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+    width: 100%;
     height: 100vh; 
     background-color: #001219; 
     transition: right 500ms ease-in-out, background-color 500ms ease-in-out;
@@ -69,17 +69,7 @@ export const Container = styled.header`
     justify-content: space-between;
     padding-left:15px;
     padding-right:15px;
-    &::after {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: ${({ isOpen }) => (isOpen ? '0' : '-998')}; 
-        
-    }
+    
 `;
 
 export const Button = styled.button`

@@ -51,10 +51,10 @@ export const SideBar = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Тут можете змінити прозорість чорного кольору, щоб затемнення відповідало вашим потребам */
-        z-index: -1; /* Щоб затемнення було під сайдбаром */
-        opacity: ${({ isOpen }) => (isOpen ? '1' : '0')}; /* Показуємо затемнення тільки коли сайдбар відкритий */
-        transition: opacity 500ms ease-in-out; /* Плавний перехід для затемнення */
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
+        transition: opacity 500ms ease-in-out; 
     }
 `;
 
@@ -76,10 +76,9 @@ export const Container = styled.header`
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Тут можете змінити прозорість чорного кольору, щоб затемнення відповідало вашим потребам */
-        z-index: -1; /* Щоб затемнення було під сайдбаром */
-        opacity: ${({ isOpen }) => (isOpen ? '1' : '0')}; /* Показуємо затемнення тільки коли сайдбар відкритий */
-        transition: opacity 500ms ease-in-out; /* Плавний перехід для затемнення */
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: ${({ isOpen }) => (isOpen ? '0' : '-998')}; 
+        
     }
 `;
 

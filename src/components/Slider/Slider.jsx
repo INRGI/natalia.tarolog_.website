@@ -14,11 +14,24 @@ const responsive = {
 };
 
 const Slider = () => {
-  return (
-    <SliderContainer>
-      <AliceCarousel animationDuration={1300} transition={1000} autoWidth={true} responsive={responsive} infinite={true} mouseTracking items={cardsSlider} autoPlay={true} disableButtonsControls={true} disableDotsControls={true} />
-    </SliderContainer>
+    
+
+    return (
+        <SliderContainer>
+            <AliceCarousel
+                animationDuration={1300}
+                transition={1000}
+                autoWidth={true}
+                responsive={responsive}
+                infinite={true}
+                mouseTracking
+                items={cardsSlider}
+                autoPlay={true}
+                disableButtonsControls={true}
+                disableDotsControls={true}
+            />      
+        </SliderContainer>
     );
-}
+};
 
 export default Slider;

@@ -8,11 +8,11 @@ const customStyles = {
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        padding: '0',
-        background: 'transparent',
-        border: 'none',
-        margin: '0',
+    transform: 'translate(-50%, -50%)',
+    padding: '0',
+    background: 'transparent',
+    border: 'none',
+    margin: '0',
     width: '70%'
     },
     overlay: {

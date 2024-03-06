@@ -1,5 +1,7 @@
+import CardList from "../../components/CardList/CardList"
+
 const CardsPage = () => {
-    return <h3>CardsPage</h3>
+    return <CardList />
 }
 
 export default CardsPage;

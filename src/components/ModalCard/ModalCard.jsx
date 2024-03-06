@@ -1,5 +1,5 @@
 import Modal from 'react-modal';
-import { Img } from './ModalCard.styled';
+import { HiddenBlock, Img } from './ModalCard.styled';
 
 const customStyles = {
   content: {
@@ -30,6 +30,7 @@ const ModalCard = ({ isOpen, onRequestClose, imageSrc }) => {
             style={customStyles}
         >
             <Img src={imageSrc} />
+            <HiddenBlock></HiddenBlock>
         </Modal>
     );
 };

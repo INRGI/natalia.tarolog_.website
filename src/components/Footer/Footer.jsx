@@ -1,8 +1,11 @@
+import { FooterStryled } from "./Footer.styled";
+
+
 const Footer = () => {
     return (
-        <footer>
+        <FooterStryled>
             <p>Footer</p>
-        </footer>
+        </FooterStryled>
     )
 }
 
